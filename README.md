@@ -1,2 +1,2 @@
-# fictional-invention
-An website to select the best university in you area
+# UniversiWho
+A website to select the best university in you area
