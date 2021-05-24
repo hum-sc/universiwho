@@ -1,0 +1,105 @@
+.card-school{
+    display: block;
+    height: 300px;
+    max-width: 390px;
+    margin: 5px;
+    background-color: var(--gray);
+    background-size: auto 150px;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    padding:15px
+}
+.location{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 10px;
+}
+
+.info{
+    position: relative;
+    display: flex;
+    height: 150px;
+    width: 179px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.grade{
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    height: 52px;
+    bottom: 0px;
+    align-items: center;
+    justify-content: center;
+}
+.item-grade{
+    width: 102px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.profile-image{
+    width: auto;
+    height: 100px;
+    width: 100px;
+    border: 3px solid var(--gray);
+    border-radius: 50%;
+    background-color: white;
+}
+.location-text{
+font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 10px;
+  text-align: center;
+}
+
+.location-pin{
+    height: 10px;
+}
+
+.gradeText{
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 22px;
+  text-align: center;
+  margin: 0px;
+}
+.gradeNumber{
+    margin: 0;
+}
+  
+  .profile-image{
+    width: auto;
+    height: 100px;
+    width: 100px;
+    border: 3px solid var(--gray);
+    border-radius: 50%;
+    background-color: white;
+  }
+  
+  .info h2{
+      margin: 0;
+  }
+
+  .locationpin{
+      height: 15px;
+      color: tomato;
+  }
+  
+

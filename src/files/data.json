@@ -1,0 +1,19 @@
+[
+    {
+        "schools" :[
+            {
+                "name":"UAEMex",
+                "grade":"10",
+                "classrom":"10",
+                "count":"150",
+                "profileImg":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Logo_de_la_UAEMex.svg/1200px-Logo_de_la_UAEMex.svg.png",
+                "bannerImg":"https://www.uaemex.mx/images/Documentos/ST/principalst.jpg",
+                "location":"Toluca, Estado de México, México",
+                "bannerAlt":"Edificio rectoria color blanco",
+                "profileAlt":"Logo uaemex",
+                "id":"0"
+            }
+        ]
+    }
+    
+]

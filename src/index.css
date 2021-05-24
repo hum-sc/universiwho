@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: 'Work Sans';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --gray:#2E2E2E;
+  --black:#000000;
+  background-color: var(--black);
+  color: white;
+
+}
+h2{
+  font-family: 'Work Sans', sans-serif;
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 36px;
+}
+h3{
+  font-family: 'Work Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 34px;
+}
+h4{
+  font-family: 'Work Sans', sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 32px;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
