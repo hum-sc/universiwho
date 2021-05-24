@@ -1,13 +1,46 @@
-.card-school{
-    display: block;
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.card-school{   
     height: 300px;
-    max-width: 390px;
-    margin: 5px;
+    min-width: 270px;
+    max-width: 400px;
+    width: calc(100vw - 20px);
+    margin: 10px;
     background-color: var(--gray);
-    background-size: auto 150px;
-    background-repeat: no-repeat;
     border-radius: 20px;
-    padding:15px
+    overflow: hidden;
+}
+.back{
+    height: 0%;
+}
+.banner{
+    position: relative;
+    height: 250px;
+    top: -50px;
+    z-index: 0;
+}
+.dropend{
+    position: relative;
+    top:-150px;
+    height: 200px;
+    z-index: 1;
+    background-color: var(--gray);
+}
+.cardContainer{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    height: 270px;
+    width: calc(100% - 30px);
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+    padding: 15px;
 }
 .location{
     position: relative;
@@ -15,32 +48,34 @@
     flex-direction: row;
     align-items: center;
     height: 10px;
+    align-self: baseline;
 }
 
 .info{
     position: relative;
     display: flex;
     height: 150px;
-    width: 179px;
+    max-width: 179px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
 }
 .grade{
     position:relative;
     display: flex;
     flex-direction: row;
     height: 52px;
+    width: 100%;
     bottom: 0px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
 }
+
 .item-grade{
-    width: 102px;
+    max-width: 102px;
     display: flex;
     position: relative;
     flex-direction: column;
