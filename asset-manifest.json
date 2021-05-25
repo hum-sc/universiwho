@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/universiwho/static/css/main.6ef92edc.chunk.css",
+    "main.js": "/universiwho/static/js/main.fed4f3d6.chunk.js",
+    "main.js.map": "/universiwho/static/js/main.fed4f3d6.chunk.js.map",
+    "runtime-main.js": "/universiwho/static/js/runtime-main.f69b6218.js",
+    "runtime-main.js.map": "/universiwho/static/js/runtime-main.f69b6218.js.map",
+    "static/js/2.3a35b371.chunk.js": "/universiwho/static/js/2.3a35b371.chunk.js",
+    "static/js/2.3a35b371.chunk.js.map": "/universiwho/static/js/2.3a35b371.chunk.js.map",
+    "static/js/3.45c142bd.chunk.js": "/universiwho/static/js/3.45c142bd.chunk.js",
+    "static/js/3.45c142bd.chunk.js.map": "/universiwho/static/js/3.45c142bd.chunk.js.map",
+    "index.html": "/universiwho/index.html",
+    "static/css/main.6ef92edc.chunk.css.map": "/universiwho/static/css/main.6ef92edc.chunk.css.map",
+    "static/js/2.3a35b371.chunk.js.LICENSE.txt": "/universiwho/static/js/2.3a35b371.chunk.js.LICENSE.txt",
+    "static/media/location.61a906bb.svg": "/universiwho/static/media/location.61a906bb.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f69b6218.js",
+    "static/js/2.3a35b371.chunk.js",
+    "static/css/main.6ef92edc.chunk.css",
+    "static/js/main.fed4f3d6.chunk.js"
+  ]
+}
