@@ -7,11 +7,10 @@ body {
   --black:#000000;
   background-color: var(--black);
   color: white;
-
 }
 h2{
   font-family: 'Work Sans', sans-serif;
-  font-size: 29px;
+  font-size: 24px;
   font-weight: 800;
   line-height: 36px;
 }
@@ -26,6 +25,15 @@ h4{
   font-size: 19px;
   font-weight: 800;
   line-height: 32px;
+}
+.location{
+  font-size: 12px;
+  font-family:'Poppins',sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: white;
 }
 
 

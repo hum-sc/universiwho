@@ -6,27 +6,94 @@
                 "grade":"10",
                 "classrom":"10",
                 "count":"150",
-                "profileImg":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Logo_de_la_UAEMex.svg/1200px-Logo_de_la_UAEMex.svg.png",
-                "bannerImg":"https://www.uaemex.mx/images/Documentos/ST/principalst.jpg",
-                "location":"Toluca, Estado de México, México",
+                "profileImg":"",
+                "bannerImg":"https://lh5.googleusercontent.com/BAZ0-yzgn65dKkkPV1OeCx-43K40HE0YvcegGydr_3qYwsnPEu04pu4HAH201GuoNlj0iqgmKFXuacfrWFI4=w1600-h767-rw",
+                "location":"México",
                 "bannerAlt":"Edificio rectoria color blanco",
                 "profileAlt":"Logo uaemex",
                 "id":"0",
                 "web":"https://www.uaemex.mx"
             },
             {
-                "name":"UNAM",
+                "name":"UAEMex",
                 "grade":"10",
                 "classrom":"10",
                 "count":"150",
-                "profileImg":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Escudo-UNAM-escalable.svg/1200px-Escudo-UNAM-escalable.svg.png",
-                "bannerImg":"https://revistaconsideraciones.com/revistaconsideraciones/wp-content/uploads/2019/07/ciudad-universitaria-e1564550147105.jpg",
-                "location":"Ciudad de Mexico, México",
+                "profileImg":"",
+                "bannerImg":"https://lh5.googleusercontent.com/BAZ0-yzgn65dKkkPV1OeCx-43K40HE0YvcegGydr_3qYwsnPEu04pu4HAH201GuoNlj0iqgmKFXuacfrWFI4=w1600-h767-rw",
+                "location":"México",
                 "bannerAlt":"Edificio rectoria color blanco",
-                "profileAlt":"Logo unam",
-                "id":"1",
-                "web":"https://www.unam.mx"
+                "profileAlt":"Logo uaemex",
+                "id":"0",
+                "web":"https://www.uaemex.mx"
+            },
+            {
+                "name":"UAEMex",
+                "grade":"10",
+                "classrom":"10",
+                "count":"150",
+                "profileImg":"",
+                "bannerImg":"https://lh5.googleusercontent.com/BAZ0-yzgn65dKkkPV1OeCx-43K40HE0YvcegGydr_3qYwsnPEu04pu4HAH201GuoNlj0iqgmKFXuacfrWFI4=w1600-h767-rw",
+                "location":"México",
+                "bannerAlt":"Edificio rectoria color blanco",
+                "profileAlt":"Logo uaemex",
+                "id":"0",
+                "web":"https://www.uaemex.mx"
+            },
+            {
+                "name":"UAEMex",
+                "grade":"10",
+                "classrom":"10",
+                "count":"150",
+                "profileImg":"",
+                "bannerImg":"https://lh5.googleusercontent.com/BAZ0-yzgn65dKkkPV1OeCx-43K40HE0YvcegGydr_3qYwsnPEu04pu4HAH201GuoNlj0iqgmKFXuacfrWFI4=w1600-h767-rw",
+                "location":"México",
+                "bannerAlt":"Edificio rectoria color blanco",
+                "profileAlt":"Logo uaemex",
+                "id":"0",
+                "web":"https://www.uaemex.mx"
             }
+            ,
+            {
+                "name":"UAEMex",
+                "grade":"10",
+                "classrom":"10",
+                "count":"150",
+                "profileImg":"",
+                "bannerImg":"https://lh5.googleusercontent.com/BAZ0-yzgn65dKkkPV1OeCx-43K40HE0YvcegGydr_3qYwsnPEu04pu4HAH201GuoNlj0iqgmKFXuacfrWFI4=w1600-h767-rw",
+                "location":"México",
+                "bannerAlt":"Edificio rectoria color blanco",
+                "profileAlt":"Logo uaemex",
+                "id":"0",
+                "web":"https://www.uaemex.mx"
+            },
+            {
+                "name":"UAEMex",
+                "grade":"10",
+                "classrom":"10",
+                "count":"150",
+                "profileImg":"",
+                "bannerImg":"https://lh5.googleusercontent.com/BAZ0-yzgn65dKkkPV1OeCx-43K40HE0YvcegGydr_3qYwsnPEu04pu4HAH201GuoNlj0iqgmKFXuacfrWFI4=w1600-h767-rw",
+                "location":"México",
+                "bannerAlt":"Edificio rectoria color blanco",
+                "profileAlt":"Logo uaemex",
+                "id":"0",
+                "web":"https://www.uaemex.mx"
+            },
+            {
+                "name":"UAEMex",
+                "grade":"10",
+                "classrom":"10",
+                "count":"150",
+                "profileImg":"",
+                "bannerImg":"https://lh5.googleusercontent.com/BAZ0-yzgn65dKkkPV1OeCx-43K40HE0YvcegGydr_3qYwsnPEu04pu4HAH201GuoNlj0iqgmKFXuacfrWFI4=w1600-h767-rw",
+                "location":"México",
+                "bannerAlt":"Edificio rectoria color blanco",
+                "profileAlt":"Logo uaemex",
+                "id":"0",
+                "web":"https://www.uaemex.mx"
+            }
+
         ]
     }
     

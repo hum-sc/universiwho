@@ -1,42 +1,37 @@
 import React, { useState } from 'react';
+
 import Data from '../files/data.json';
+
 import '../styles/card.css'
-import Location from '../images/location.svg'
+
+import Location from './icons/location'
+
+import pruebaIMG from '../images/rectoriaUAEM.jpg'
+
+import profileIMG from '../images/uaem.png'
+
+import Rating from './rating.jsx'
+
+
 const dataSchools = Data[0].schools;
 function Item (props) {
     return(
     <div
         onClick={()=> window.open(props.web, "_self")}
         id={props.name}
-        className='card-school' 
+        className='card' 
     >
-        <div className='back'>
-            <img className='banner' src={props.banner} />
-            <div className='dropend'/>
+        <div className='location'>
+            <Location location={props.location}/>
         </div>
-        
-        <div className="cardContainer">
-            <div className='location'>
-                <img alt='location pin' src={Location} className='locationpin' />
-                <p className='location-text'>{props.location}</p>
-            </div>
-            <div className='info'>
-                <img className='profile-image' alt={props.name+' logo'} src={props.profile} />
-                <h2>{props.name}</h2>
-            </div>
-            <div className='grade'>
-                <div className='item-grade' >
-                    <p className='gradeText'>Calificación</p>
-                    <h4 className='gradeNumber'>{props.grade}</h4>
-                </div>
-                <div className='item-grade' >
-                    <p className='gradeText'>Calidad de Aulas</p>
-                    <h4 className='gradeNumber'>{props.classrom}</h4>
-                </div>
-                <div className='item-grade' >
-                    <p className='gradeText'>No. Carreras</p>
-                    <h4 className='gradeNumber'>{props.count}</h4>
-                </div>
+        <img className='banner' src={pruebaIMG} alt='banner'/>
+        <div className='info'>
+            <img className='profile-image' alt={props.name+' logo'} src={profileIMG} />
+            <h2>{props.name}</h2>
+        </div>
+        <div className='grade'>
+            <div className='item-grade' >
+                <Rating/>
             </div>
         </div>
     </div>
