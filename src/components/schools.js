@@ -4,29 +4,38 @@ import Data from '../files/data.json';
 
 import '../styles/card.css'
 
-import Location from './icons/location'
+import Location from './location'
+import Rating from './rating.jsx'
 
 import pruebaIMG from '../images/rectoriaUAEM.jpg'
-
 import profileIMG from '../images/uaem.png'
 
-import Rating from './rating.jsx'
+import {Theme} from './context/theme-context'
+import { useContext } from 'react';
+
 
 
 const dataSchools = Data[0].schools;
 function Item (props) {
+    const contextTheme = useContext(Theme);
+    const isDark = contextTheme.isDark;
+    var theme = null;
+    theme = isDark ? contextTheme.dark : contextTheme.light;
+
+
     return(
     <div
         onClick={()=> window.open(props.web, "_self")}
         id={props.name}
-        className='card' 
+        className='card'
+        style={{backgroundColor : theme.backgroundCard}} 
     >
         <div className='location'>
-            <Location location={props.location}/>
+            <Location location={props.location} color="white"/>
         </div>
         <img className='banner' src={pruebaIMG} alt='banner'/>
         <div className='info'>
-            <img className='profile-image' alt={props.name+' logo'} src={profileIMG} />
+            <img className='profile-image' alt={props.name+' logo'} src={profileIMG}  style={{borderColor : theme.backgroundCard}}/>
             <h2>{props.name}</h2>
         </div>
         <div className='grade'>

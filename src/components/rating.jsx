@@ -1,10 +1,15 @@
-import { useState } from "react";
+import React from 'react'
+import { useState , useContext } from "react";
+import {Theme} from './context/theme-context'
 
 
 function Star (){
+    const contextTheme = useContext(Theme);
+    var theme = contextTheme.isDark ? contextTheme.dark : contextTheme.light;
+    
     return(
         <>
-            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF">
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill={theme.secondary}>
                 <g>
                     <path d="M0,0h24v24H0V0z" fill="none"/>
                     <path d="M0,0h24v24H0V0z" fill="none"/>
