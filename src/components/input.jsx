@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import MailIcon from '../icons/mail';
+import PasswordIcon from '../icons/password';
 const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -115,6 +116,7 @@ function Input ({
         focused={isFocused}
         >
         { type==='email' && <MailIcon class="inputImage"></MailIcon>} 
+        {type ==="password" && <PasswordIcon class="inputImage"/>}
         {renderLabel()}
         <input
             value={value}
