@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app"
-// TODO: Replace the following with your app's Firebase project configuration
+import {getFirestore} from 'firebase/firestore'
 const firebaseConfig = {
-  // ...
   apiKey: "AIzaSyAyUtnCxvqVuX0veafuCWRZH9gfyIFo--0",
   authDomain: "what-university-7bc14.firebaseapp.com",
   projectId: "what-university-7bc14",
@@ -11,6 +10,6 @@ const firebaseConfig = {
   measurementId: "G-XDX81FWM44"
 }
 export const firebaseApp = initializeApp(firebaseConfig);
-
+export const dataBase =  getFirestore();
 
           

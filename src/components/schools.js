@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext} from 'react';
 
 import Data from '../files/data.json';
 
@@ -11,7 +11,7 @@ import pruebaIMG from '../images/rectoriaUAEM.jpg'
 import profileIMG from '../images/uaem.png'
 
 import {Theme} from './context/theme-context'
-import { useContext } from 'react';
+
 
 
 

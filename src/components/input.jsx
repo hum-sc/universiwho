@@ -25,7 +25,7 @@ const InputContainer = styled.div`
     outline: none;
 
     padding: 12px 3px 12px 0px;
-    padding-left:${props=> props.type=="text" ? "15px": "34px"};
+    padding-left:${props=> props.type==="text" ? "15px": "34px"};
    
 
     font-size: 16px;
@@ -39,13 +39,18 @@ const InputContainer = styled.div`
         `
         border-bottom:2px solid ${props.primary};
       `}
+    ${props =>
+      props.error &&
+      `
+      border-bottom:2px solid ${props.errorColor};
+    `}
   
   }
   & > label {
     color: ${props=>props.secondary};
     position: absolute;
     top: 15px;
-    left:${props=> props.type=="text" ? "15px": "44px"};;
+    left:${props=> props.type==="text" ? "15px": "44px"};;
     transition: all 0.2s ease;
     z-index: 500;
 
@@ -53,12 +58,17 @@ const InputContainer = styled.div`
       props.focused &&
       `
       font-size: 13px;
-      transform:${props.type=="text" ? "translateY(-23px) translateX(-4px)" :"translateY(-23px) translateX(-34px)"};
+      transform:${props.type==="text" ? "translateY(-23px) translateX(-4px)" :"translateY(-23px) translateX(-34px)"};
       z-index: 501;
       color: ${props.primary};
       background: ${props.background};
       border-radius:4px;
       padding: 0 8px;
+    `}
+    ${props =>
+      props.error &&
+      `
+      color: ${props.errorColor};
     `}
 
   }
@@ -105,13 +115,13 @@ function Input ({
     const renderLabel = () => label && <label>{label}</label>;
 
     const isFocused = focused || String(value).length || type === "date";
-
       return(<>
         <InputContainer
         background={props.background} 
         primary={props.primary} 
         secondary={props.secondary} 
         error={props.error}
+        errorColor={props.ecolor}
         type={type}
         focused={isFocused}
         >
@@ -131,28 +141,6 @@ function Input ({
         </InputContainer>
       </>);
 }
-/*
-            background={props.background} 
-            primary={props.primary} 
-            secondary={props.secondary} 
-            error={props.error}
-            focused={isFocused}
-        >
-            <MailIcon className></MailIcon>
-        {renderLabel()}
-        <input
-            value={value}
-            type={type}
-            onChange={e => onChange(e.target.value)}
-            onFocus={handleOnFocus}
-            onBlur={handleOnBlur}
-            ref={ref => setRef(ref)}
-            {...props}
-        />
-        </InputContainer>
-        </>
-    );
-};*/
 Input.defaultProps = {
     type: "text",
     label: "",

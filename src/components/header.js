@@ -1,22 +1,36 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../styles/header.css'
 
 import ThemeButton from './theme';
 import {Theme} from './context/theme-context'
+import {User} from './context/user-context'
+import { setSignOut } from '../services/auth';
+
 
 function Head (){
     const contextTheme = useContext(Theme);
+    const contextUser = useContext(User)
     const isDark = contextTheme.isDark;
+
+    const isLoged = contextUser.isLoged;
+
     var theme = null;
     isDark ? theme = contextTheme.dark : theme = contextTheme.light;
-    
+
     const aStyle = {
         color : theme.primary
     }
+    const signOutHandle = ()=>{
+        setSignOut();
+        contextUser.setLoged(false)
+        contextUser.setUser("")
 
+    }
+    
 
+    
     return(
         <>
         <div className="container" style={
@@ -28,15 +42,18 @@ function Head (){
             <h3 className="title">UniverWhat ?</h3>
             <div className="nav-container" >
                 <ThemeButton/>
-                <a className="nav-item">
-                    <Link to="/" style={aStyle}> Inicio </Link>
-                </a>
-                <a className="nav-item">
-                    <Link to="/login" style={aStyle}> Log In </Link>
-                </a>
-                <a className="nav-item">
-                    <Link to="/signup" style={aStyle}  > Sing Up </Link>
-                </a>
+                <div className="nav-item">
+                    <NavLink exact to="/" style={aStyle} activeClassName="act"> Inicio </NavLink>
+                </div>
+                {isLoged ? <div onClick={()=>{signOutHandle()}}>SignOut</div>:(
+                    <>
+                    <div className="nav-item">
+                        <NavLink exact to="/login" style={aStyle} activeClassName="act"> Log In </NavLink>
+                    </div>
+                    <div className="nav-item">
+                        <NavLink exact to="/signup" style={aStyle} activeClassName="act"> Sing Up </NavLink>
+                    </div>
+                    </>) }
             </div>
         </div>
         </>
