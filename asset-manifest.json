@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.be9f6b50.chunk.css",
-    "main.js": "/static/js/main.b71d8161.chunk.js",
-    "main.js.map": "/static/js/main.b71d8161.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.04378b01.js",
-    "runtime-main.js.map": "/static/js/runtime-main.04378b01.js.map",
-    "static/js/2.3d6ad2ca.chunk.js": "/static/js/2.3d6ad2ca.chunk.js",
-    "static/js/2.3d6ad2ca.chunk.js.map": "/static/js/2.3d6ad2ca.chunk.js.map",
-    "static/js/3.ba1c606f.chunk.js": "/static/js/3.ba1c606f.chunk.js",
-    "static/js/3.ba1c606f.chunk.js.map": "/static/js/3.ba1c606f.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.be9f6b50.chunk.css.map": "/static/css/main.be9f6b50.chunk.css.map",
-    "static/js/2.3d6ad2ca.chunk.js.LICENSE.txt": "/static/js/2.3d6ad2ca.chunk.js.LICENSE.txt",
-    "static/media/rectoriaUAEM.9a8990bb.jpg": "/static/media/rectoriaUAEM.9a8990bb.jpg",
-    "static/media/uaem.9b301408.png": "/static/media/uaem.9b301408.png"
+    "main.css": "/universiwho/static/css/main.be9f6b50.chunk.css",
+    "main.js": "/universiwho/static/js/main.b71d8161.chunk.js",
+    "main.js.map": "/universiwho/static/js/main.b71d8161.chunk.js.map",
+    "runtime-main.js": "/universiwho/static/js/runtime-main.c449e4cd.js",
+    "runtime-main.js.map": "/universiwho/static/js/runtime-main.c449e4cd.js.map",
+    "static/js/2.ed3fff19.chunk.js": "/universiwho/static/js/2.ed3fff19.chunk.js",
+    "static/js/2.ed3fff19.chunk.js.map": "/universiwho/static/js/2.ed3fff19.chunk.js.map",
+    "static/js/3.ba1c606f.chunk.js": "/universiwho/static/js/3.ba1c606f.chunk.js",
+    "static/js/3.ba1c606f.chunk.js.map": "/universiwho/static/js/3.ba1c606f.chunk.js.map",
+    "index.html": "/universiwho/index.html",
+    "static/css/main.be9f6b50.chunk.css.map": "/universiwho/static/css/main.be9f6b50.chunk.css.map",
+    "static/js/2.ed3fff19.chunk.js.LICENSE.txt": "/universiwho/static/js/2.ed3fff19.chunk.js.LICENSE.txt",
+    "static/media/rectoriaUAEM.9a8990bb.jpg": "/universiwho/static/media/rectoriaUAEM.9a8990bb.jpg",
+    "static/media/uaem.9b301408.png": "/universiwho/static/media/uaem.9b301408.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.04378b01.js",
-    "static/js/2.3d6ad2ca.chunk.js",
+    "static/js/runtime-main.c449e4cd.js",
+    "static/js/2.ed3fff19.chunk.js",
     "static/css/main.be9f6b50.chunk.css",
     "static/js/main.b71d8161.chunk.js"
   ]
