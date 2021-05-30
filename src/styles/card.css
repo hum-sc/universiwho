@@ -4,419 +4,144 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+.card{
+    position: relative;
+    margin: 7px;
+    overflow: hidden;
+    border-radius:20px;
+}
+.back{
+    height: 100%;
+    width: 100%;
+}
+.banner{
+    position: absolute;
+    object-fit: contain;
+    width:100%;
+    z-index: 0;
+}
+.info{
+    position: absolute;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    top: 0%;
+    margin: 5px;
+
+    text-align: center;
+}
+.grade{
+    display: flex;
+    position: absolute;
+    width: calc(100% - 8%);
+
+    flex-direction: row;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+
+    bottom: 4%;
+    margin: 4%;
+}
+
+.location{
+    display: flex;
+    align-items: center;
+    position: absolute;
+
+    margin: 4%;
+
+    z-index: 1;
+}
+.profile-image{
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+
+    object-fit: contain;
+    width: 30%;
+    border-radius: 50%;
+
+    background-color: white;
+    border: solid var(--gray);
+    
+}
+
+.location .location-pin{
+    height: 15px;
+}
+.info h2{
+    position: absolute;
+    top: 13%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    margin: auto auto auto auto;
+
+    height: fit-content;
+    width: fit-content;
+}
+.location .text{
+    margin: 0px 5px;
+}
+
+.item-grade{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    text-align: center;
+}
+.grade-text{
+    margin: 0%;
+    font-size: 12px;
+}
+.grade-number{
+    line-height: 20px;
+    margin: 0%;
+}
 
 @media only screen and (max-width:659px){
     .card{
-        position: relative;
         width: calc(50% - 15px);
-        margin: 7px;
         height: calc(50vw - 15px - 14px);
-        overflow: hidden;
-        border-radius:20px;
-    }
-    .back{
-        height: 100%;
-        width: 100%;
-    
     }
     .banner{
-        position: absolute;
-        object-fit: contain;
-        width:100%;
         top: -25%;
-        z-index: 0;
-    }
-    .info{
-        position: absolute;
-        width: calc(100% - 10px);
-        height: calc(100% - 10px);
-        top: 0%;
-        margin: 5px;
-    
-        text-align: center;
-    }
-    .grade{
-        display: flex;
-        position: absolute;
-        width: calc(100% - 8%);
-    
-        flex-direction: row;
-        justify-content: space-around;
-    
-        flex-wrap: wrap;
-    
-        bottom: 4%;
-        margin: 4%;
     }
     
-    .location{
-        display: flex;
-        align-items: center;
-        position: absolute;
-    
-        margin: 4%;
-    
-        z-index: 1;
-    }
-    .profile-image{
-        position: absolute;
-        top: 10%;
-        left: 0%;
-        right: 0%;
-        margin: auto;
-    
-        object-fit: contain;
-        width: 30%;
-        border-radius: 50%;
-    
-        background-color: white;
-        border: solid var(--gray);
-        
-    }
-    
-    .location .location-pin{
-        height: 15px;
-    }
-    .info h2{
-        position: absolute;
-        top: 13%;
-        bottom: 0%;
-        left: 0%;
-        right: 0%;
-        margin: auto auto auto auto;
-    
-        height: fit-content;
-        width: fit-content;
-    }
-    .location .text{
-        margin: 0px 5px;
-    }
-    
-    .item-grade{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: fit-content;
-        text-align: center;
-    }
-    .grade-text{
-        margin: 0%;
-        font-size: 12px;
-    }
-    .grade-number{
-        line-height: 20px;
-        margin: 0%;
-    }
+
 }
 
 @media only screen and (max-width: 768px) and (min-width:600px){
     .card{
-        position: relative;
         width: calc(33.3% - 15px);
-        margin: 7px;
         height: calc(33.3vw - 15px - 15px);
-        overflow: hidden;
-        border-radius:20px;
-    }
-    .back{
-        height: 100%;
-        width: 100%;
-    
     }
     .banner{
-        position: absolute;
-        object-fit: contain;
-        width:100%;
         top: -15%;
-        z-index: 0;
-    }
-    .info{
-        position: absolute;
-        width: calc(100% - 10px);
-        height: calc(100% - 10px);
-        top: 10%;
-        margin: 5px;
-    
-        text-align: center;
-    }
-    .grade{
-        display: flex;
-        position: absolute;
-        width: calc(100% - 8%);
-    
-        flex-direction: row;
-        justify-content: space-around;
-    
-        flex-wrap: wrap;
-    
-        bottom: 4%;
-        margin: 4%;
-    }
-    
-    .location{
-        display: flex;
-        align-items: center;
-        position: absolute;
-    
-        margin: 4%;
-    
-        z-index: 1;
-    }
-    .profile-image{
-        position: absolute;
-        top: 10%;
-        left: 0%;
-        right: 0%;
-        margin: auto;
-    
-        object-fit: contain;
-        width: 30%;
-        border-radius: 50%;
-    
-        background-color: white;
-        border: solid 
-        
-    }
-    
-    .location .location-pin{
-        height: 15px;
-    }
-    .info h2{
-        position: absolute;
-        top: 13%;
-        bottom: 0%;
-        left: 0%;
-        right: 0%;
-        margin: auto auto auto auto;
-    
-        height: fit-content;
-        width: fit-content;
-    }
-    .location .text{
-        margin: 0px 5px;
-    }
-    
-    .item-grade{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: fit-content;
-        text-align: center;
-    }
-    .grade-text{
-        margin: 0%;
-        font-size: 12px;
-    }
-    .grade-number{
-        line-height: 20px;
-        margin: 0%;
     }
 }
 
 @media only screen and (max-width: 1024px) and (min-width:769px){
     .card{
-        position: relative;
         width: calc(25% - 15px);
-        margin: 7px;
         height: calc(25vw - 15px - 15px);
-        overflow: hidden;
-        border-radius:20px;
     }
-    .back{
-        height: 100%;
-        width: 100%;
-    
-    }
+
     .banner{
-        position: absolute;
-        object-fit: contain;
-        width:100%;
         top: -10%;
-        z-index: 0;
     }
-    .info{
-        position: absolute;
-        width: calc(100% - 10px);
-        height: calc(100% - 10px);
-        top: 10%;
-        margin: 5px;
-    
-        text-align: center;
-    }
-    .grade{
-        display: flex;
-        position: absolute;
-        width: calc(100% - 8%);
-    
-        flex-direction: row;
-        justify-content: space-around;
-    
-        flex-wrap: wrap;
-    
-        bottom: 4%;
-        margin: 4%;
-    }
-    
-    .location{
-        display: flex;
-        align-items: center;
-        position: absolute;
-    
-        margin: 4%;
-    
-        z-index: 1;
-    }
-    .profile-image{
-        position: absolute;
-        top: 10%;
-        left: 0%;
-        right: 0%;
-        margin: auto;
-    
-        object-fit: contain;
-        width: 30%;
-        border-radius: 50%;
-    
-        background-color: white;
-        border: solid;
-        
-    }
-    
-    .location .location-pin{
-        height: 15px;
-    }
-    .info h2{
-        position: absolute;
-        top: 13%;
-        bottom: 0%;
-        left: 0%;
-        right: 0%;
-        margin: auto auto auto auto;
-    
-        height: fit-content;
-        width: fit-content;
-    }
-    .location .text{
-        margin: 0px 5px;
-    }
-    
-    .item-grade{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: fit-content;
-        text-align: center;
-    }
-    .grade-text{
-        margin: 0%;
-        font-size: 12px;
-    }
-    .grade-number{
-        line-height: 20px;
-        margin: 0%;
-    }
+
 }
 @media only screen and (min-width:1025px){
     .card{
-        position: relative;
         width: calc(240px - 15px);
-        margin: 7px;
         height: calc(240px - 15px - 15px);
-        overflow: hidden;
-        border-radius:20px;
-    }
-    .back{
-        height: 100%;
-        width: 100%;
-    
     }
     .banner{
-        position: absolute;
-        object-fit: contain;
-        width:100%;
         top: -10%;
-        z-index: 0;
-    }
-    .info{
-        position: absolute;
-        width: calc(100% - 10px);
-        height: calc(100% - 10px);
-        top: 10%;
-        margin: 5px;
-    
-        text-align: center;
-    }
-    .grade{
-        display: flex;
-        position: absolute;
-        width: calc(100% - 8%);
-    
-        flex-direction: row;
-        justify-content: space-around;
-    
-        flex-wrap: wrap;
-    
-        bottom: 4%;
-        margin: 4%;
-    }
-    
-    .location{
-        display: flex;
-        align-items: center;
-        position: absolute;
-    
-        margin: 4%;
-    
-        z-index: 1;
-    }
-    .profile-image{
-        position: absolute;
-        top: 10%;
-        left: 0%;
-        right: 0%;
-        margin: auto;
-    
-        object-fit: contain;
-        width: 30%;
-        border-radius: 50%;
-    
-        background-color: white;
-        border: solid ;
-        
-    }
-    
-    .location .location-pin{
-        height: 15px;
-    }
-    .info h2{
-        position: absolute;
-        top: 13%;
-        bottom: 0%;
-        left: 0%;
-        right: 0%;
-        margin: auto auto auto auto;
-    
-        height: fit-content;
-        width: fit-content;
-    }
-    .location .text{
-        margin: 0px 5px;
-    }
-    
-    .item-grade{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: fit-content;
-        text-align: center;
-    }
-    .grade-text{
-        margin: 0%;
-        font-size: 12px;
-    }
-    .grade-number{
-        line-height: 20px;
-        margin: 0%;
     }
 }
 

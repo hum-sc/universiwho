@@ -7,7 +7,7 @@ import ThemeButton from './theme';
 import {Theme} from './context/theme-context'
 import {User} from './context/user-context'
 import { setSignOut } from '../services/auth';
-
+import Plus from '../icons/plus';
 
 function Head (){
     const contextTheme = useContext(Theme);
@@ -28,6 +28,9 @@ function Head (){
         contextUser.setUser("")
 
     }
+    const addHandle = ()=>{
+        console.log("add")
+    }
     
 
     
@@ -39,14 +42,15 @@ function Head (){
                 color : theme.primary
             }
             } >
-            <h3 className="title">UniWhat ?</h3>
+            <NavLink exact to="/" style={aStyle} activeClassName="act"><h3 className="title">UniWhat ?</h3></NavLink>
             <div className="nav-container" >
                 <ThemeButton/>
-                <div className="nav-item">
-                    <NavLink exact to="/" style={aStyle} activeClassName="act"> Inicio </NavLink>
-                </div>
                 {isLoged ? (<>
+                        <div className="nav-item">
+                            <div onClick={()=>{addHandle()}}> <Plus/> </div>
+                        </div>
                         <div onClick={()=>{signOutHandle()}}>SignOut</div>
+                        
                     </>):(
                     <>
                     <div className="nav-item">

@@ -2,6 +2,7 @@
 import React from 'react'
 import {createContext ,useState, useEffect} from 'react'
 var darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+var mobile = window.matchMedia('(max-width:659px)').matches;
 
 var _isDark = localStorage.getItem("isDark")
 if(_isDark==="true"){
@@ -33,6 +34,7 @@ export const Theme = createContext({
 
 function ThemeProvider (props) {
     const[isDark, setDark] = useState(true);
+    const [isMobile, setMobile] = useState(false);
     const lightTheme = themes.light;
     const darkTheme = themes.dark;
 
@@ -40,6 +42,9 @@ function ThemeProvider (props) {
     useEffect(()=>{
         darkMode ? setDark(true):setDark(false)
     },[])
+    useEffect(()=>{
+      mobile ? setMobile(true):setMobile(false)
+  },[mobile])
     localStorage.setItem("isDark", isDark)
     document.body.style.backgroundColor = isDark ?  darkTheme.background : lightTheme.background;
     document.body.style.color = isDark ? darkTheme.primary : lightTheme.primary;
@@ -49,7 +54,8 @@ function ThemeProvider (props) {
               isDark, 
               setDark,
               light : themes.light,
-              dark : themes.dark 
+              dark : themes.dark,
+              isMobile,
             }
           }>
               {props.children}
