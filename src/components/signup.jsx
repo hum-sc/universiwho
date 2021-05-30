@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useContext } from 'react';
+import {Redirect} from 'react-router'
 import{signUp} from '../services/auth'
 import Input from './input'
 import '../styles/signup.css'
@@ -95,6 +96,7 @@ function SignUp(props){
     }, [state.password, state.secondPassword, state.email])
     return(
         <div className="signup-container">
+            {contextUser.isLoged && <Redirect to="/"/>}
             <h2>Registrate</h2>
             <p style={{color : theme.error}}> {error.message} </p>
             <div className="form-container">

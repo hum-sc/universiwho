@@ -26,7 +26,6 @@ export async function setUser(data, id){
         await Promise.reject(e);
     })
     return {userRef, id};
-
 }
 
 export async function searchUser(user){

@@ -16,6 +16,7 @@ import {Theme} from './context/theme-context'
 
 
 const dataSchools = Data[0].schools;
+
 function Item (props) {
     const contextTheme = useContext(Theme);
     const isDark = contextTheme.isDark;

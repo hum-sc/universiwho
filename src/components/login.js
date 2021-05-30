@@ -7,6 +7,7 @@ import {Theme} from './context/theme-context'
 import {User} from './context/user-context'
 import { searchUser, setUser } from '../services/data';
 import { sendPasswordResetEmail } from '@firebase/auth';
+import { Redirect } from 'react-router';
 const re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
 
 function LogIn(){
@@ -56,6 +57,7 @@ function LogIn(){
 
     return(<div className='signup-container'>
         <h2>Inicia Sesion</h2>
+        {contextUser.isLoged && <Redirect to="/"/>}
         <p style={{color : theme.error}}> {error.message} </p>
         <div className="form-container">
             <Input

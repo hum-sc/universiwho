@@ -45,7 +45,9 @@ function Head (){
                 <div className="nav-item">
                     <NavLink exact to="/" style={aStyle} activeClassName="act"> Inicio </NavLink>
                 </div>
-                {isLoged ? <div onClick={()=>{signOutHandle()}}>SignOut</div>:(
+                {isLoged ? (<>
+                        <div onClick={()=>{signOutHandle()}}>SignOut</div>
+                    </>):(
                     <>
                     <div className="nav-item">
                         <NavLink exact to="/login" style={aStyle} activeClassName="act"> Log In </NavLink>
