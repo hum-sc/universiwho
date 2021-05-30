@@ -39,7 +39,7 @@ function Head (){
                 color : theme.primary
             }
             } >
-            <h3 className="title">UniverWhat ?</h3>
+            <h3 className="title">UniWhat ?</h3>
             <div className="nav-container" >
                 <ThemeButton/>
                 <div className="nav-item">
