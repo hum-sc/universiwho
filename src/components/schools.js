@@ -10,7 +10,7 @@ import Rating from './rating.jsx'
 import pruebaIMG from '../images/rectoriaUAEM.jpg'
 import profileIMG from '../images/uaem.png'
 
-import {Theme} from './context/theme-context'
+import {Theme} from '../context/theme-context'
 
 
 

@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import {Theme} from '../components/context/theme-context'
+import {Theme} from '../context/theme-context'
 
 
 const PasswordIcon = (props)=>{

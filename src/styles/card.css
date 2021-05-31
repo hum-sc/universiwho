@@ -54,7 +54,6 @@
 }
 .profile-image{
     position: absolute;
-    top: 10%;
     left: 0%;
     right: 0%;
     margin: auto;
@@ -73,7 +72,6 @@
 }
 .info h2{
     position: absolute;
-    top: 13%;
     bottom: 0%;
     left: 0%;
     right: 0%;
@@ -110,8 +108,12 @@
     .banner{
         top: -25%;
     }
-    
-
+    .profile-image{
+        top: 10%; 
+    }
+    .info h2{
+        top:13%;
+    }
 }
 
 @media only screen and (max-width: 768px) and (min-width:600px){
@@ -121,6 +123,12 @@
     }
     .banner{
         top: -15%;
+    }
+    .profile-image{
+        top: 15%; 
+    }
+    .info h2{
+        top:15%;
     }
 }
 
@@ -133,6 +141,12 @@
     .banner{
         top: -10%;
     }
+    .profile-image{
+        top: 25%; 
+    }
+    .info h2{
+        top:35%;
+    }
 
 }
 @media only screen and (min-width:1025px){
@@ -142,6 +156,12 @@
     }
     .banner{
         top: -10%;
+    }
+    .profile-image{
+        top: 25%; 
+    }
+    .info h2{
+        top:35%;
     }
 }
 

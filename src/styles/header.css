@@ -13,10 +13,24 @@
     width: 30%;
     justify-content: space-around;
 }
+
+.container-nav-mobile{
+    position: absolute;
+    display: flex;
+    top: 64px;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    width: 100vw;
+    height: calc(100vh - 64px);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+    z-index: 4;
+    background-color: hotpink;
+}
 .act{
     font-weight: 600;
 }
 
-@media only screen and (max-width:659px){
-
-}

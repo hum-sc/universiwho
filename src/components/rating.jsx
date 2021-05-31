@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState , useContext } from "react";
-import {Theme} from './context/theme-context'
+import {Theme} from '../context/theme-context'
 
 
 function Star (){

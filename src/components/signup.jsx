@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useContext } from 'react';
 import {Redirect} from 'react-router'
-import{signUp} from '../services/auth'
-import Input from './input'
+
 import '../styles/signup.css'
-import {Theme} from './context/theme-context'
+
+import Input from './input'
+
+import {Theme} from '../context/theme-context'
+import {User} from '../context/user-context'
+
 import { searchUser, setUser } from '../services/data';
-import {User} from './context/user-context'
+import{signUp} from '../services/auth'
+
 
 const re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
 function SignUp(props){

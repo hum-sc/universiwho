@@ -1,8 +1,8 @@
 
 import React from 'react'
-import {createContext ,useState, useEffect} from 'react'
+import {createContext ,useState, useEffect} from 'react';
+import { useMediaQuery } from 'react-responsive';
 var darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-var mobile = window.matchMedia('(max-width:659px)').matches;
 
 var _isDark = localStorage.getItem("isDark")
 if(_isDark==="true"){
@@ -37,14 +37,19 @@ function ThemeProvider (props) {
     const [isMobile, setMobile] = useState(false);
     const lightTheme = themes.light;
     const darkTheme = themes.dark;
+    const isDesktopOrMobile = useMediaQuery({
+      query: '(max-width: 659px)'
+    })
 
+    useEffect(()=>{
+      isDesktopOrMobile ? setMobile(true):setMobile(false);
+    },[isDesktopOrMobile])
     
     useEffect(()=>{
         darkMode ? setDark(true):setDark(false)
     },[])
-    useEffect(()=>{
-      mobile ? setMobile(true):setMobile(false)
-  },[mobile])
+    
+
     localStorage.setItem("isDark", isDark)
     document.body.style.backgroundColor = isDark ?  darkTheme.background : lightTheme.background;
     document.body.style.color = isDark ? darkTheme.primary : lightTheme.primary;
@@ -53,13 +58,15 @@ function ThemeProvider (props) {
             {
               isDark, 
               setDark,
+              isMobile,
               light : themes.light,
               dark : themes.dark,
-              isMobile,
+              
             }
           }>
               {props.children}
         </Theme.Provider>
+
     );
 }
 

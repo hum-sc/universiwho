@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {getCurrentUser} from '../../services/auth'
+import {getCurrentUser} from '../services/auth'
 export const User = React.createContext({
     
 })
