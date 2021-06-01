@@ -1,12 +1,12 @@
 import React from 'react'
-import { useState , useContext } from "react";
+import { useState , useContext, useEffect } from "react";
 import {Theme} from '../context/theme-context'
+import '../styles/card.css'
 
 
 function Star (){
     const contextTheme = useContext(Theme);
     var theme = contextTheme.isDark ? contextTheme.dark : contextTheme.light;
-    
     return(
         <>
             <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill={theme.secondary}>
@@ -26,11 +26,17 @@ function Star (){
 }
 
 
-function Rating(){
+function Rating(props){
     const [grade, setGrade]=useState(10)
-    
-    return(
-        <Star></Star>
+    const a = 5;
+    const indents = [];
+    for (var i = 0; i < parseInt(props.cal/2); i++) {
+        indents.push("someting");
+    }
+    const stars = indents.map((dat)=><Star></Star>)
+    return(<div className="rating">
+        {stars}
+        </div>
     );
 }
 

@@ -7,6 +7,7 @@ import {Theme} from '../context/theme-context'
 import {User} from '../context/user-context'
 
 import { Redirect } from 'react-router';
+import Button from './button';
 
 const re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
 
@@ -84,7 +85,7 @@ function LogIn(){
              error={error.password}
              onChange={val=>setState({...state, password: val})}
             ></Input>
-            <button className="form-button" onClick={()=>logInHandler(state.email, state.password)}>Iniciar sesión</button>
+            <Button text="Iniciar Sesión" click={()=>logInHandler(state.email, state.password)}/>
         </div>
     </div>);
 }

@@ -5,6 +5,7 @@
     align-items: center;
     padding: 0px 10%;
     height: 64px;
+    z-index: 10;
 }
 
 .nav-container{
@@ -13,6 +14,20 @@
     width: 30%;
     justify-content: space-around;
 }
+.container-nav{
+    display: flex;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+    z-index: 4;
+}
 
 .container-nav-mobile{
     position: absolute;
@@ -20,17 +35,53 @@
     top: 64px;
     left: 0%;
     right: 0%;
-    bottom: 0%;
-    width: 100vw;
-    height: calc(100vh - 64px);
+    width: calc(100vw - 20px);
+    height: max-content;
+    border-radius: 0px 0px 20px 20px;
     align-items: center;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     margin: auto;
-    z-index: 4;
-    background-color: hotpink;
+    z-index: 5;
+}
+.container-nav-mobile .nav-item{
+    font-size: 1.2rem;
+    margin: 10px;
 }
 .act{
     font-weight: 600;
 }
+
+.add-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 74px;
+    right:50px;
+    padding: 10px;
+    width: 300px;
+    min-height: 50px;
+    z-index: 10;
+    border-radius: 10px;
+}
+
+.close-add{
+    position: absolute;
+    top:5px;
+    right: 5px;
+}
+
+@media only screen  and (max-width:659px){
+    .add-container{
+        position: absolute;
+        right:0;
+        left: 0;
+        margin: auto;
+        width: 280px;
+    }
+    
+}
+
 

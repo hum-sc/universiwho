@@ -33,7 +33,7 @@ const InputContainer = styled.div`
     transition: all 0.2s ease;
     border-bottom:2px solid ${props=>props.secondary};
 
-    z-index: 500;
+    z-index: 2;
     ${props =>
         props.focused &&
         `
@@ -52,14 +52,14 @@ const InputContainer = styled.div`
     top: 15px;
     left:${props=> props.type==="text" ? "15px": "44px"};;
     transition: all 0.2s ease;
-    z-index: 500;
+    z-index: 1;
 
     ${props =>
       props.focused &&
       `
       font-size: 13px;
       transform:${props.type==="text" ? "translateY(-23px) translateX(-4px)" :"translateY(-23px) translateX(-34px)"};
-      z-index: 501;
+      z-index: 3;
       color: ${props.primary};
       background: ${props.background};
       border-radius:4px;
@@ -77,7 +77,7 @@ const InputContainer = styled.div`
     top: 10px;
     left: 5px;
     transition: all 0.2s ease;
-    z-index: 500;
+    z-index: 1;
     }
     
 `;

@@ -11,6 +11,7 @@ import {User} from '../context/user-context'
 
 import { searchUser, setUser } from '../services/data';
 import{signUp} from '../services/auth'
+import Button from './button';
 
 
 const re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
@@ -165,7 +166,8 @@ function SignUp(props){
                     error={error.password}
                     onChange={val => setState({ ...state, secondPassword: val })}>
                 </Input>
-                <button className="form-button" onClick={()=>{signUpHandler(state.email, state.password) } }>Registrarme</button>
+                <Button text="Registrarme" click={()=>signUpHandler(state.email, state.password)}/>
+                
             </div>
         </div>
 

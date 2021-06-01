@@ -16,8 +16,11 @@
 }
 .banner{
     position: absolute;
-    object-fit: contain;
-    width:100%;
+    min-width: auto;
+    min-height: auto;
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
     z-index: 0;
 }
 .info{
@@ -58,8 +61,11 @@
     right: 0%;
     margin: auto;
 
-    object-fit: contain;
+    min-width: auto;
+    min-height: auto;
+    height: 30%;
     width: 30%;
+    object-fit: cover;
     border-radius: 50%;
 
     background-color: white;
@@ -99,14 +105,20 @@
     line-height: 20px;
     margin: 0%;
 }
+.rating{
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
 
 @media only screen and (max-width:659px){
     .card{
         width: calc(50% - 15px);
-        height: calc(50vw - 15px - 14px);
+        height: calc(50vw - 15px);
     }
     .banner{
-        top: -25%;
+        bottom: 70%;
     }
     .profile-image{
         top: 10%; 
@@ -119,10 +131,10 @@
 @media only screen and (max-width: 768px) and (min-width:600px){
     .card{
         width: calc(33.3% - 15px);
-        height: calc(33.3vw - 15px - 15px);
+        height: calc(33.3vw - 15px);
     }
     .banner{
-        top: -15%;
+        bottom: 65%;
     }
     .profile-image{
         top: 15%; 
@@ -135,11 +147,11 @@
 @media only screen and (max-width: 1024px) and (min-width:769px){
     .card{
         width: calc(25% - 15px);
-        height: calc(25vw - 15px - 15px);
+        height: calc(25vw - 15px);
     }
 
     .banner{
-        top: -10%;
+        bottom:55%;
     }
     .profile-image{
         top: 25%; 
@@ -152,10 +164,10 @@
 @media only screen and (min-width:1025px){
     .card{
         width: calc(240px - 15px);
-        height: calc(240px - 15px - 15px);
+        height: calc(240px - 15px);
     }
     .banner{
-        top: -10%;
+        bottom: 55%;
     }
     .profile-image{
         top: 25%; 

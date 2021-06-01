@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext, useEffect, useState} from 'react';
 
 import Data from '../files/data.json';
 
@@ -11,11 +11,14 @@ import pruebaIMG from '../images/rectoriaUAEM.jpg'
 import profileIMG from '../images/uaem.png'
 
 import {Theme} from '../context/theme-context'
+import { getSchools } from '../services/data';
+import { setDoc } from '@firebase/firestore';
 
 
 
 
 const dataSchools = Data[0].schools;
+
 
 function Item (props) {
     const contextTheme = useContext(Theme);
@@ -34,14 +37,14 @@ function Item (props) {
         <div className='location'>
             <Location location={props.location} color="white"/>
         </div>
-        <img className='banner' src={pruebaIMG} alt='banner'/>
+        <img className='banner' src={props.banner} alt='banner'/>
         <div className='info'>
-            <img className='profile-image' alt={props.name+' logo'} src={profileIMG}  style={{borderColor : theme.backgroundCard}}/>
+            <img className='profile-image' alt={props.name+' logo'} src={props.profile}  style={{borderColor : theme.backgroundCard}}/>
             <h2>{props.name}</h2>
         </div>
         <div className='grade'>
             <div className='item-grade' >
-                <Rating/>
+                <Rating cal={props.cal}/>
             </div>
         </div>
     </div>
@@ -49,21 +52,33 @@ function Item (props) {
 }
 
 
-const items = dataSchools.map((data)=>
-    <Item 
-        banner={data.bannerImg} 
-        banner-alt={data.bannerAlt} 
-        location={data.location} 
-        name={data.name}
-        key={data.id.toString()}
-        profile={data.profileImg}
-        grade={data.grade}
-        classrom={data.classrom}
-        count={data.count}
-        web={data.web}
-    />
-);
+
 function Schools () {
+    const [schools, setSchools] = useState([]);
+    useEffect(()=>{
+        getSchools().then((data)=>{
+            setSchools(data);
+        })
+        const interval = setInterval(() => {
+            getSchools().then((data)=>{
+                setSchools(data);
+            })
+        }, 2000);
+        return ()=>clearInterval(interval)
+    },[]);
+
+    const items = schools.map((data)=>
+        <Item 
+            banner={data.banner} 
+            location={data.location} 
+            name={data.name}
+            key={data.name}
+            profile={data.profile}
+            grade={data.cal}     
+            web={data.web}
+            cal={data.cal}
+        />
+    );
     return(<>
     {items}
     </>);
