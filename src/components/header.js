@@ -14,7 +14,6 @@ function Head (){
     const contextTheme = useContext(Theme);
     const contextUser = useContext(User)
     const isDark = contextTheme.isDark;
-    const isMobile = contextUser.isMobile;
     const path= useLocation().pathname;
 
     var theme = null;
@@ -35,11 +34,11 @@ function Head (){
                 color : theme.primary
             }
             } >
-            <NavLink exact to="/" style={aStyle} activeClassName="act">
-                    <h3 style={{backgroundColor: theme.background,}}className="title">
+            <NavLink exact to="/" style={aStyle}>
+                    <h3 style={{backgroundColor: theme.background, color:theme.primary}}className="title">
                         UniWhat ?
                     </h3>
-                </NavLink>
+            </NavLink>
             <Menu/>
         </div>
         </>

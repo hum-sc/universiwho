@@ -1,54 +1,116 @@
 import React, { useContext, useEffect, useState} from 'react';
+import styled from 'styled-components'
 
-import Data from '../files/data.json';
+import {updateSchool} from '../services/data'
 
 import '../styles/card.css'
 
 import Location from './location'
 import Rating from './rating.jsx'
 
-import pruebaIMG from '../images/rectoriaUAEM.jpg'
-import profileIMG from '../images/uaem.png'
-
 import {Theme} from '../context/theme-context'
 import { getSchools } from '../services/data';
-import { setDoc } from '@firebase/firestore';
+import Input from './input'
+import Button from './button';
+import Close from '../icons/close'
+import {useLocation} from 'react-router-dom'
+const Div = styled.div`
+    position:absolute;
+    transition: .3s cubic-bezier(0.25, 0.1, 0, 0.93);
+    z-index:100;
+    height:100%;
+    width:calc(100% - 20px);
+    padding: 0px 10px;
+    top:0;
+    left:0;
+    background-color:${({back})=>back};
+    transform: ${({ open }) => open ? "scale(1)" : 'scale(0)'};
 
-
-
-
-const dataSchools = Data[0].schools;
-
+`
 
 function Item (props) {
+    const [isUpdate, setUpdate] = useState(false);
+    const [data, setData] = useState({
+        name:props.name,
+        cal:0,
+    })
+
+    const path= useLocation().pathname;
+
     const contextTheme = useContext(Theme);
     const isDark = contextTheme.isDark;
     var theme = null;
     theme = isDark ? contextTheme.dark : contextTheme.light;
+    const handleGrade=()=>{
+        setUpdate(!isUpdate)
+    }
+    const aStyle = {
+        color : theme.primary,
+        fontSize:"14px",
+        margin:0,
+    }
 
-
-    return(
-    <div
-        onClick={()=> window.open(props.web, "_self")}
-        id={props.name}
-        className='card'
-        style={{backgroundColor : theme.backgroundCard}} 
-    >
-        <div className='location'>
-            <Location location={props.location} color="white"/>
-        </div>
-        <img className='banner' src={props.banner} alt='banner'/>
-        <div className='info'>
-            <img className='profile-image' alt={props.name+' logo'} src={props.profile}  style={{borderColor : theme.backgroundCard}}/>
-            <h2>{props.name}</h2>
-        </div>
-        <div className='grade'>
-            <div className='item-grade' >
-                <Rating cal={props.cal}/>
+    const uploadExperience = ()=>{
+        
+        if(data.cal !==0)
+        {
+            console.log(data)
+            updateSchool({
+                name: data.name,
+                cal: data.cal
+            })
+            .then((response)=>{
+                setUpdate(false);
+            })
+            .catch((e)=>{
+            })
+        }else{
+            console.log("es 0")
+        }
+    }
+    return(<>
+        <div
+            
+            id={props.name}
+            className='card'
+            style={{backgroundColor : theme.backgroundCard}} 
+        >
+            <div className='location'>
+                <Location location={props.location} color="white"/>
             </div>
+            <img className='banner' src={props.banner} alt='banner'/>
+            <div className='info' onClick={()=>handleGrade()}>
+                <img className='profile-image' alt={props.name+' logo'} src={props.profile}  style={{borderColor : theme.backgroundCard}}/>
+                <h2>{props.name}</h2>
+            </div>
+            <div className='grade'>
+                <div className='item-grade' >
+                    <Rating cal={props.cal}/>
+                </div>
+            </div>
+            {path!=="/" && <Div
+            back={theme.backgroundCard}
+            open={isUpdate}>
+            <div className="close-add" onClick={()=>handleGrade()}>
+                <Close/>
+            </div>
+            <a style={aStyle} href={props.web}>Sitio web</a>
+            <h5 style={{margin:0}}>Califica a {props.name}</h5>
+            <Input
+            background={theme.backgroundCard}
+            primary={theme.primary}
+            secondary = {theme.secondary}
+            ecolor = {theme.error}
+            label="Calificacion"
+            type="number"
+            max="10"
+            min="1"
+            value={data.cal}
+            onChange={val=>setData({...data, cal: parseInt(val)})}/>
+            <Button text="Añadir" click={()=>{uploadExperience()}}/>
+        </Div>}
         </div>
-    </div>
-    );
+    </>);
 }
 
 
@@ -60,6 +122,7 @@ function Schools () {
             setSchools(data);
         })
     },[]);
+    console.log(schools)
 
     const items = schools.map((data)=>
         <Item 

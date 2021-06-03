@@ -9,6 +9,7 @@ import Persona3 from '../images/persona3.jpg'
 import Persona4 from '../images/persona6.jpg'
 import Button from './button';
 import { Link, Redirect} from 'react-router-dom';
+import How from './how';
 function Landing (){
     const contextTheme = useContext(Theme);
     const contextUser = useContext(User);
@@ -30,6 +31,7 @@ function Landing (){
         </Link> 
         </div>
     </div>
+    <How/>
     <div className="video-container">
         <h2>¿Como elegir una universidad?</h2>
         <div className="video">

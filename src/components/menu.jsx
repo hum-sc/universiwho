@@ -47,6 +47,9 @@ function Type (props){
         contextUser.setUser("")
     }
     return (<div className={props.mobile ? "container-nav-mobile":"container-nav"} style={{backgroundColor : contextTheme.isMobile && theme.backgroundCard}}>
+        <div className="nav-item">
+                    <NavLink exact to="/howto" style={aStyle} activeClassName="act"> <p>HowTo</p></NavLink>
+        </div>
         {isLoged ? (
         <>
             <div className="nav-item">
@@ -72,7 +75,8 @@ function Menu (){
         banner:"",
         location:"",
         web:"",
-        cal:0
+        cal:0,
+        time:1,
     });
     const [isClicked, setClick]=useState(false);
     const [isAddClicked, setAddClick]=useState(false);
@@ -90,7 +94,6 @@ function Menu (){
     isDark ? theme = contextTheme.dark : theme = contextTheme.light;
     const handleClick = ()=>{
         setClick(!isClicked);
-        setAddClick(false);
     }
     const addHandle = ()=>{
         setAddClick(!isAddClicked);
@@ -120,11 +123,10 @@ function Menu (){
         
         if(data.name !== "" && data.cal !==0)
         {
-            console.log(data)
             setError("");
             updateSchool({
-                name: data.name,
-                cal: data.cal
+                name:data.name,
+                cal:data.cal
             })
             .then((response)=>{
                 setUpdate(false);
@@ -169,17 +171,16 @@ function Menu (){
                 <Type addHandle={()=>{addHandle()}} mobile={true}/>
             </Div>
                 
-        </>):<Type addHandle={()=>addHandle()} mobile={false}/> 
+        </>):  <>
+                <Type addHandle={()=>addHandle()} mobile={false}/> </>
     }
     
         <Div open={!isAddClicked} style={{backgroundColor:theme.backgroundCard, top:"64px", position:"absolute"}} className="add-container">
             <div className="close-add" onClick={()=>addHandle()}>
                 <Close/>
             </div>
-
             <a style={{color:theme.error}}>{error}</a>
             <h5 onClick={()=>handleNew()}>Añadir escuela</h5>
-            {isNew && <>
             <Input
             background={theme.backgroundCard}
             primary={theme.primary}
@@ -242,34 +243,6 @@ function Menu (){
             value={data.cal}
             onChange={val=>setData({...data, cal: parseInt(val)})}/>
             <Button text="Añadir" click={()=>{uploadSchool()}}/>
-            </>}
-            <h5 onClick={()=>{handleExperience()}}>Califica tu experiencia</h5>
-            {isUpdate && <>
-                <Input
-                    background={theme.backgroundCard}
-                    primary={theme.primary}
-                    secondary = {theme.secondary}
-                    ecolor = {theme.error}
-
-                    label="Escuela"
-                    type="text"
-                    value={data.name}
-                    onChange={val=>setData({...data, name: val})}
-                />
-                <Input
-            background={theme.backgroundCard}
-            primary={theme.primary}
-            secondary = {theme.secondary}
-            ecolor = {theme.error}
-            label="Califica tu experiencia del 1-10"
-            type="number"
-            min="1" 
-            max="10"
-            value={data.cal}
-            onChange={val=>setData({...data, cal:parseInt(val)})}/>
-            <Button text="Calificar" click={()=>{uploadExperience()}}
-            />  
-            </>}
         </Div>
 
     

@@ -40,7 +40,7 @@ function ThemeProvider (props) {
     const lightTheme = themes.light;
     const darkTheme = themes.dark;
     const isDesktopOrMobile = useMediaQuery({
-      query: '(max-width: 659px)'
+      query: '(max-width: 704px)'
     })
 
     useEffect(()=>{

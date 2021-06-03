@@ -50,7 +50,7 @@ export async function searchSchool(school){
 export async function getSchools(){
     let schoolRes;
     let schools;
-    let q = query(collection(dataBase, schoolsCollection),orderBy("cal"), limit(25));
+    let q = query(collection(dataBase, schoolsCollection), orderBy("cal", "desc"), limit(25));
     let querySnapshot = await getDocs(q);
     schoolRes = querySnapshot.docs;
     schools=schoolRes.map((doc)=>doc.data())
