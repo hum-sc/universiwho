@@ -102,7 +102,7 @@ function SignUp(props){
     }, [state.password, state.secondPassword, state.email])
     return(
         <div className="signup-container">
-            {contextUser.isLoged && <Redirect to="/"/>}
+            {contextUser.isLoged && <Redirect to="/escuelas"/>}
             <h2>Registrate</h2>
             <p style={{color : theme.error}}> {error.message} </p>
             <div className="form-container">

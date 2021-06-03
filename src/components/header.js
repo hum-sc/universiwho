@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import '../styles/header.css'
 
 import ThemeButton from './theme';
@@ -15,23 +15,31 @@ function Head (){
     const contextUser = useContext(User)
     const isDark = contextTheme.isDark;
     const isMobile = contextUser.isMobile;
+    const path= useLocation().pathname;
 
     var theme = null;
+    var op = null;
     isDark ? theme = contextTheme.dark : theme = contextTheme.light;
+    isDark? op = contextTheme.light :op = contextTheme.dark
 
     const aStyle = {
         color : theme.primary
     }
+
     
     return(
         <>
         <div className="container" style={
             {
-                backgroundColor : theme.backgroundCard,
+                backgroundColor :theme.backNav,
                 color : theme.primary
             }
             } >
-            <NavLink exact to="/" style={aStyle} activeClassName="act"><h3 className="title">UniWhat ?</h3></NavLink>
+            <NavLink exact to="/" style={aStyle} activeClassName="act">
+                    <h3 style={{backgroundColor: theme.background,}}className="title">
+                        UniWhat ?
+                    </h3>
+                </NavLink>
             <Menu/>
         </div>
         </>

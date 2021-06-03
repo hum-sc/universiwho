@@ -1,10 +1,11 @@
 import React from 'react'
 import Head from './components/header'
 import Content from './components/content'
-import { HashRouter as Router} from 'react-router-dom';
+import { HashRouter as Router, Route} from 'react-router-dom';
 
 import ThemeProvider from './context/theme-context'
 import UserProvider from './context/user-context'
+import Footer from './components/footer';
 
 
 
@@ -15,6 +16,7 @@ export default function App() {
           <ThemeProvider >
               <Head />
               <Content/>
+              <Footer/>
           </ThemeProvider>
         </UserProvider>
       </Router> 

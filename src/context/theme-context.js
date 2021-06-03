@@ -17,14 +17,16 @@ const themes = {
       backgroundCard: "#dfdfdf",
       primary : "#000000",
       secondary : "rgb(66, 66, 66)",
-      error:"#B00020"
+      error:"#B00020",
+      backNav:"rgba(223, 223, 223, 0)"
     },
     dark:{
         background : "#121212",
         backgroundCard : "#323232",
         primary : "#ffffff",
         secondary:"rgb(139, 139, 139)",
-        error:"#e94948"
+        error:"#e94948",
+        backNav:"rgba(50, 50, 50, 0)"
     }
 }
 

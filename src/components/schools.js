@@ -59,12 +59,6 @@ function Schools () {
         getSchools().then((data)=>{
             setSchools(data);
         })
-        const interval = setInterval(() => {
-            getSchools().then((data)=>{
-                setSchools(data);
-            })
-        }, 2000);
-        return ()=>clearInterval(interval)
     },[]);
 
     const items = schools.map((data)=>
@@ -80,7 +74,11 @@ function Schools () {
         />
     );
     return(<>
+    <h2 className="h2-schools">Nosotros te damos la informacion</h2>
+    <p className="p-schools">No decidas al azar</p>
+    <div className="schools-container">
     {items}
+    </div>
     </>);
 }
 

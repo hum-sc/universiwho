@@ -1,9 +1,22 @@
-.content{
+.schools-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
+.h2-schools{
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 0.5rem;
+}
+.p-schools{
+    margin-left: 10%;
+    margin-right: 10%;
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+
 .card{
     position: relative;
     margin: 7px;

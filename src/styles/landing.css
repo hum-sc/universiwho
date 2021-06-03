@@ -1,0 +1,164 @@
+.body{
+    position: relative;
+}
+.hero{
+    position: relative;
+    top:-64px;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+.container{
+    position: sticky;
+    top: 0%;
+}
+.images{
+    position:absolute;
+    top:0;
+    right: 0;
+    width: 40%;
+    height:100%;
+}
+
+.hero-info{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 30%;
+}
+.persona1{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    top: 26%;
+    right: 30%;
+    border-radius: 50%;
+}
+.persona2{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    top: 30%;
+    right: 90%;
+    border-radius: 50%;
+}
+.persona3{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    top: 60%;
+    right: 70%;
+    border-radius: 50%;
+}
+.persona4{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    top: 70%;
+    right: 10%;
+    border-radius: 50%;
+}
+.video-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    max-width: 768px;
+    margin: auto;
+    height: 100vh;
+}
+.genially-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    max-width: 768px;
+    margin: auto;
+    height: 100vh;
+}
+.genially{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 100%;
+}
+.genially iframe{
+position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 61%;
+  margin: auto;
+}
+
+.video{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    padding-bottom: 0;
+}
+.video iframe{
+    position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video h2{
+    margin-bottom: 5rem;
+}
+
+.schools-hero{
+    width: 100vw;
+}
+
+@media only screen and (min-width: 650px) and (max-width:900px){
+    .persona1{
+        right: 10%;
+    }
+}
+@media only screen and (max-width: 649px) {
+    .persona1{
+        right: 0;
+        height: 150px;
+        width: 150px;
+        top: 32%;
+    }
+    .persona2{
+        right: 20%;
+        top: 15%;
+    }
+    .persona3{
+        right: 20%;
+        top: 55%;
+    }
+    .persona4{
+        height: 120px;
+        width: 120px;
+        right: 3%;
+        top: 70%;
+    }
+    .hero-info{
+        top:30%;
+        width: 50%;
+    }
+    .hero-info h1{
+        font-size: 1.5rem;
+    }
+}

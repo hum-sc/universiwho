@@ -58,7 +58,7 @@ function LogIn(){
 
     return(<div className='signup-container'>
         <h2>Inicia Sesion</h2>
-        {contextUser.isLoged && <Redirect to="/"/>}
+        {contextUser.isLoged && <Redirect to="/escuelas"/>}
         <p style={{color : theme.error}}> {error.message} </p>
         <div className="form-container">
             <Input

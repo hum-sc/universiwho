@@ -1,0 +1,23 @@
+.footer-container{
+    display: flex;
+    min-height: 64px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10%;
+    flex-wrap: wrap;
+}
+.footer-container h3{
+    margin: 15px 0px;
+}
+.socialmenu{
+    margin: 15px 0px;
+}
+.footer-container p {
+    font-size: 14px;
+}
+
+.socialicon{
+    color: inherit;
+    margin: 5px;
+}

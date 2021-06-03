@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import '../styles/header.css'
 
 import ThemeButton from './theme';
@@ -15,7 +15,16 @@ import Plus from '../icons/plus';
 import Hamburger from '../icons/hamburger';
 import Close from '../icons/close';
 import Button from './button';
+import styled from 'styled-components';
 var isAddClicked;
+
+const Div = styled.div`
+    position:absolute;
+    transition: .3s cubic-bezier(0.25, 0.1, 0, 0.93);
+    transform: ${({ open }) => open ? "scale(0)" : 'scale(1)'};
+
+`
+
 
 function Type (props){
     const contextTheme = useContext(Theme);
@@ -24,31 +33,33 @@ function Type (props){
     const isDark = contextTheme.isDark;
     const isLoged = contextUser.isLoged;
     var theme = null;
+    const path = useLocation().pathname;
 
     isDark ? theme = contextTheme.dark : theme = contextTheme.light;
     const aStyle = {
         color : theme.primary
     }
 
+
     const signOutHandle = ()=>{
         setSignOut();
         contextUser.setLoged(false)
         contextUser.setUser("")
     }
-    return (<div className={props.mobile ? "container-nav-mobile":"container-nav"} style={{ backgroundColor : contextTheme.isMobile ? theme.backgroundCard : theme.backgroundCard, boxShadow:theme.secondary}}>
+    return (<div className={props.mobile ? "container-nav-mobile":"container-nav"} style={{backgroundColor : contextTheme.isMobile && theme.backgroundCard}}>
         {isLoged ? (
         <>
             <div className="nav-item">
-                <div onClick={()=>props.addHandle()}> <Plus/> </div>
+                <div  onClick={()=>props.addHandle()}> <Plus/> </div>
             </div>
             <div className="nav-item" onClick={()=>{signOutHandle()}}>SignOut</div>    
         </>):(
         <>
         <div className="nav-item">
-            <NavLink exact to="/login" style={aStyle} activeClassName="act"> Log In </NavLink>
+            <NavLink exact to="/login" style={aStyle} activeClassName="act"> <p>LogIn</p></NavLink>
         </div>
         <div className="nav-item">
-            <NavLink exact to="/signup" style={aStyle} activeClassName="act"> Sing Up </NavLink>
+            <NavLink exact to="/signup" style={aStyle} activeClassName="act"> <p>SignUp</p></NavLink>
         </div>
         </>)}
     </div>);
@@ -79,6 +90,7 @@ function Menu (){
     isDark ? theme = contextTheme.dark : theme = contextTheme.light;
     const handleClick = ()=>{
         setClick(!isClicked);
+        setAddClick(false);
     }
     const addHandle = ()=>{
         setAddClick(!isAddClicked);
@@ -130,116 +142,135 @@ function Menu (){
     useEffect(()=>{
         setClick(false);
     }, [isMobile])
-    return(<div className="nav-container" >
-    <ThemeButton/>
+    const aStyle = {
+        color : theme.primary
+    }
+    const bStyle = {
+        color : theme.primary,
+        backgroundColor: theme.backgroundCard,
+    }
+    const path = useLocation().pathname;
+    return(<div style={bStyle} className="nav-container" >
+        <div className="nav-item">
+            <ThemeButton/>
+        </div>
     {
         isMobile ?(<>
-            <div onClick={()=>{handleClick()}}>
-                {!isClicked ? <Hamburger/>: <Close/>} 
+            <div style={{width:"24px", height:"24px", position:"relative"}} onClick={()=>{handleClick()}}>
+                <Div open={isClicked}>
+                <Hamburger/>
+                </Div>
+                <Div open={!isClicked}>
+                <Close/>
+                </Div>
+                
             </div>
-            {isClicked && <div onClick={()=>{handleClick()}}><Type addHandle={()=>{addHandle()}} mobile={true}/></div>}
+            <Div open={!isClicked}  onClick={()=>{handleClick()}} style={{position:"absolute", top:"64px", width:"100vw", left:0}}>
+                <Type addHandle={()=>{addHandle()}} mobile={true}/>
+            </Div>
+                
         </>):<Type addHandle={()=>addHandle()} mobile={false}/> 
     }
-    {isAddClicked && (<div style={{backgroundColor:theme.backgroundCard}} className="add-container">
-        <div className="close-add" onClick={()=>addHandle()}>
-            <Close/>
-        </div>
-        <a style={{color:theme.error}}>{error}</a>
-        <h5 onClick={()=>handleNew()}>Añadir escuela</h5>
-        {isNew && <>
-        <Input
-        background={theme.backgroundCard}
-        primary={theme.primary}
-        secondary = {theme.secondary}
-        ecolor = {theme.error}
+    
+        <Div open={!isAddClicked} style={{backgroundColor:theme.backgroundCard, top:"64px", position:"absolute"}} className="add-container">
+            <div className="close-add" onClick={()=>addHandle()}>
+                <Close/>
+            </div>
 
-        label="Escuela"
-        type="text"
-        value={data.name}
-        onChange={val=>setData({...data, name: val})}/>
-        <Input
-        background={theme.backgroundCard}
-        primary={theme.primary}
-        secondary = {theme.secondary}
-        ecolor = {theme.error}
-
-        label="Ubicación"
-        type="text"
-        value={data.location}
-        onChange={val=>setData({...data, location: val})}/>
-        <Input
-        background={theme.backgroundCard}
-        primary={theme.primary}
-        secondary = {theme.secondary}
-        ecolor = {theme.error}
-
-        label="Website"
-        type="text"
-        value={data.web}
-        onChange={val=>setData({...data, web: val})}/>
-        <Input
-        background={theme.backgroundCard}
-        primary={theme.primary}
-        secondary = {theme.secondary}
-        ecolor = {theme.error}
-
-        label="URL Imagen del Escudo"
-        type="text"
-        value={data.profile}
-        onChange={val=>setData({...data, profile: val})}/>
-        <Input
-        background={theme.backgroundCard}
-        primary={theme.primary}
-        secondary = {theme.secondary}
-        ecolor = {theme.error}
-
-        label="URL Imagen del Banner"
-        type="text"
-        value={data.banner}
-        onChange={val=>setData({...data, banner: val})}/>
-       <Input
-        background={theme.backgroundCard}
-        primary={theme.primary}
-        secondary = {theme.secondary}
-        ecolor = {theme.error}
-        label="Califica tu experiencia del 1-10"
-        type="number"
-        min="1" 
-        max="10"
-        value={data.cal}
-        onChange={val=>setData({...data, cal: parseInt(val)})}/>
-        <Button text="Añadir" click={()=>{uploadSchool()}}/>
-        </>}
-        <h5 onClick={()=>{handleExperience()}}>Califica tu experiencia</h5>
-        {isUpdate && <>
+            <a style={{color:theme.error}}>{error}</a>
+            <h5 onClick={()=>handleNew()}>Añadir escuela</h5>
+            {isNew && <>
             <Input
-                background={theme.backgroundCard}
-                primary={theme.primary}
-                secondary = {theme.secondary}
-                ecolor = {theme.error}
+            background={theme.backgroundCard}
+            primary={theme.primary}
+            secondary = {theme.secondary}
+            ecolor = {theme.error}
 
-                label="Escuela"
-                type="text"
-                value={data.name}
-                onChange={val=>setData({...data, name: val})}
-            />
+            label="Escuela"
+            type="text"
+            value={data.name}
+            onChange={val=>setData({...data, name: val})}/>
             <Input
-        background={theme.backgroundCard}
-        primary={theme.primary}
-        secondary = {theme.secondary}
-        ecolor = {theme.error}
-        label="Califica tu experiencia del 1-10"
-        type="number"
-        min="1" 
-        max="10"
-        value={data.cal}
-        onChange={val=>setData({...data, cal:parseInt(val)})}/>
-        <Button text="Calificar" click={()=>{uploadExperience()}}
-        />
-        
-            
-        </>}
-    </div>)}
+            background={theme.backgroundCard}
+            primary={theme.primary}
+            secondary = {theme.secondary}
+            ecolor = {theme.error}
+
+            label="Ubicación"
+            type="text"
+            value={data.location}
+            onChange={val=>setData({...data, location: val})}/>
+            <Input
+            background={theme.backgroundCard}
+            primary={theme.primary}
+            secondary = {theme.secondary}
+            ecolor = {theme.error}
+
+            label="Website"
+            type="text"
+            value={data.web}
+            onChange={val=>setData({...data, web: val})}/>
+            <Input
+            background={theme.backgroundCard}
+            primary={theme.primary}
+            secondary = {theme.secondary}
+            ecolor = {theme.error}
+
+            label="URL Imagen del Escudo"
+            type="text"
+            value={data.profile}
+            onChange={val=>setData({...data, profile: val})}/>
+            <Input
+            background={theme.backgroundCard}
+            primary={theme.primary}
+            secondary = {theme.secondary}
+            ecolor = {theme.error}
+
+            label="URL Imagen del Banner"
+            type="text"
+            value={data.banner}
+            onChange={val=>setData({...data, banner: val})}/>
+        <Input
+            background={theme.backgroundCard}
+            primary={theme.primary}
+            secondary = {theme.secondary}
+            ecolor = {theme.error}
+            label="Califica tu experiencia del 1-10"
+            type="number"
+            min="1" 
+            max="10"
+            value={data.cal}
+            onChange={val=>setData({...data, cal: parseInt(val)})}/>
+            <Button text="Añadir" click={()=>{uploadSchool()}}/>
+            </>}
+            <h5 onClick={()=>{handleExperience()}}>Califica tu experiencia</h5>
+            {isUpdate && <>
+                <Input
+                    background={theme.backgroundCard}
+                    primary={theme.primary}
+                    secondary = {theme.secondary}
+                    ecolor = {theme.error}
+
+                    label="Escuela"
+                    type="text"
+                    value={data.name}
+                    onChange={val=>setData({...data, name: val})}
+                />
+                <Input
+            background={theme.backgroundCard}
+            primary={theme.primary}
+            secondary = {theme.secondary}
+            ecolor = {theme.error}
+            label="Califica tu experiencia del 1-10"
+            type="number"
+            min="1" 
+            max="10"
+            value={data.cal}
+            onChange={val=>setData({...data, cal:parseInt(val)})}/>
+            <Button text="Calificar" click={()=>{uploadExperience()}}
+            />  
+            </>}
+        </Div>
 
     
 </div>)
