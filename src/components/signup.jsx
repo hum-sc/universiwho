@@ -14,7 +14,7 @@ import{signUp} from '../services/auth'
 import Button from './button';
 
 
-const re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+const re=/^([\da-z_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/;
 function SignUp(props){
     const contextTheme = useContext(Theme);
     const contextUser = useContext(User);

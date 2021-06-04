@@ -26,7 +26,7 @@ function Landing (){
         <div className="hero-info">
         <h1>Elije la mejor universidad</h1>
         <p>Conoce la calificacion que le otorgan los alumnos a cada universidad, desde los profesores, hasta las aulas, no escojas al azar</p>
-        <Link exact to="/escuelas">
+        <Link to="/escuelas">
             <Button text="Ver universidades"></Button>
         </Link> 
         </div>
@@ -35,12 +35,12 @@ function Landing (){
     <div className="video-container">
         <h2>¿Como elegir una universidad?</h2>
         <div className="video">
-            <iframe width="980" height="551" src="https://www.youtube.com/embed/YI68dALshr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="980" height="551" src="https://www.youtube.com/embed/YI68dALshr0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
         </div>
     </div>
     <div className="genially-container">
         <div className="genially">
-            <iframe frameborder="0" width="800" height="1300" src="https://view.genial.ly/60b86a9801f7780d2ffafc4a" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> 
+            <iframe title="genially" frameBorder="0" width="800" height="1300" src="https://view.genial.ly/60b86a9801f7780d2ffafc4a" type="text/html" allowscriptaccess="always" allowFullScreen={true} scrolling="yes" allownetworking="all" ></iframe> 
         </div>    
     </div>
     <div className="schools-hero">

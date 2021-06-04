@@ -1,15 +1,8 @@
 import '../styles/how.css'
-import {Theme} from '../context/theme-context'
-import { useContext } from "react";
 import Persona1 from '../images/persona5.jpg'
 import Persona2 from '../images/persona2.jpg'
-import Persona3 from '../images/persona3.jpg'
-import Persona4 from '../images/persona6.jpg'
+
 function How(){
-    const contextTheme = useContext(Theme);
-    const isDark = contextTheme.isDark;
-    var theme;
-    isDark ? theme = contextTheme.dark : theme = contextTheme.light;
     return(<>
     <div className="how-container">
     <div className="back">

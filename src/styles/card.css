@@ -89,7 +89,7 @@
 .location .location-pin{
     height: 15px;
 }
-.info h2{
+.info h4{
     position: absolute;
     bottom: 0%;
     left: 0%;
@@ -136,7 +136,7 @@
     .profile-image{
         top: 10%; 
     }
-    .info h2{
+    .info h4{
         top:13%;
     }
 }
@@ -152,7 +152,7 @@
     .profile-image{
         top: 15%; 
     }
-    .info h2{
+    .info h4{
         top:15%;
     }
 }
@@ -169,7 +169,7 @@
     .profile-image{
         top: 25%; 
     }
-    .info h2{
+    .info h4{
         top:35%;
     }
 
@@ -185,7 +185,7 @@
     .profile-image{
         top: 25%; 
     }
-    .info h2{
+    .info h4{
         top:35%;
     }
 }

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import {Theme} from '../context/theme-context'
-import {User} from '../context/user-context'
+
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
@@ -16,7 +16,6 @@ library.add(fab, fas)
 
 function Footer (props) {
     const contextTheme = useContext(Theme);
-    const contextUser = useContext(User);
     var theme = contextTheme.isDark ? contextTheme.dark:contextTheme.light;
     const aStyle = {
         color : theme.primary

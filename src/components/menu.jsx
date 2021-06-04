@@ -1,14 +1,14 @@
 
 import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import '../styles/header.css'
 
 import ThemeButton from './theme';
 import {Theme} from '../context/theme-context'
 import {User} from '../context/user-context'
 import { setSignOut } from '../services/auth';
-import {setSchool, updateSchool} from '../services/data';
+import {setSchool} from '../services/data';
 import Input from './input'
 
 import Plus from '../icons/plus';
@@ -16,7 +16,6 @@ import Hamburger from '../icons/hamburger';
 import Close from '../icons/close';
 import Button from './button';
 import styled from 'styled-components';
-var isAddClicked;
 
 const Div = styled.div`
     position:absolute;
@@ -33,7 +32,6 @@ function Type (props){
     const isDark = contextTheme.isDark;
     const isLoged = contextUser.isLoged;
     var theme = null;
-    const path = useLocation().pathname;
 
     isDark ? theme = contextTheme.dark : theme = contextTheme.light;
     const aStyle = {
@@ -81,10 +79,8 @@ function Menu (){
     const [isClicked, setClick]=useState(false);
     const [isAddClicked, setAddClick]=useState(false);
     const [isNew, setNew] = useState(false);
-    const [isUpdate, setUpdate] = useState(false);
 
     const contextTheme = useContext(Theme);
-    const contextUser = useContext(User);
 
     const isDark = contextTheme.isDark;
     const isMobile = contextTheme.isMobile;
@@ -103,12 +99,8 @@ function Menu (){
         setNew(!isNew);
     }
 
-    const handleExperience = ()=>{
-        setUpdate(!isUpdate)
-    }
-
     const uploadSchool = () =>{
-        if(data.name !== "" && data.banner!="" && data.cal !=null && data.profile!=="" && data.location !="")
+        if(data.name !== "" && data.banner!=="" && data.cal !=null && data.profile!=="" && data.location !=="")
         {
             setError("")
             setSchool(data).catch((e)=>{
@@ -119,39 +111,14 @@ function Menu (){
             setError("Revisa que todos los campos esten llenos")
         }
     }
-    const uploadExperience = ()=>{
-        
-        if(data.name !== "" && data.cal !==0)
-        {
-            setError("");
-            updateSchool({
-                name:data.name,
-                cal:data.cal
-            })
-            .then((response)=>{
-                setUpdate(false);
-                setNew(false)
-            })
-            .catch((e)=>{
-                setError(e);
-            })
-            
-        }else{
-            setError("Revisa que todos los campos esten llenos")
-        }
-    }
-
     useEffect(()=>{
         setClick(false);
     }, [isMobile])
-    const aStyle = {
-        color : theme.primary
-    }
+
     const bStyle = {
         color : theme.primary,
         backgroundColor: theme.backgroundCard,
     }
-    const path = useLocation().pathname;
     return(<div style={bStyle} className="nav-container" >
         <div className="nav-item">
             <ThemeButton/>
@@ -179,7 +146,7 @@ function Menu (){
             <div className="close-add" onClick={()=>addHandle()}>
                 <Close/>
             </div>
-            <a style={{color:theme.error}}>{error}</a>
+            <p style={{color:theme.error}}>{error}</p>
             <h5 onClick={()=>handleNew()}>Añadir escuela</h5>
             <Input
             background={theme.backgroundCard}

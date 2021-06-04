@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useContext } from 'react';
-import{getCurrentUser, setLogIn, signUp} from '../services/auth'
+import{setLogIn} from '../services/auth'
 import Input from './input'
 import '../styles/signup.css'
 import {Theme} from '../context/theme-context'
@@ -9,10 +9,7 @@ import {User} from '../context/user-context'
 import { Redirect } from 'react-router';
 import Button from './button';
 
-const re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-
 function LogIn(){
-    let usernow;
     const contextTheme = useContext(Theme)
     const contextUser = useContext(User)
     var theme = contextTheme.isDark ? contextTheme.dark:contextTheme.light;

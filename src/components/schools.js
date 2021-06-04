@@ -13,9 +13,12 @@ import { getSchools } from '../services/data';
 import Input from './input'
 import Button from './button';
 import Close from '../icons/close'
-import {useLocation} from 'react-router-dom'
 const Div = styled.div`
     position:absolute;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
     transition: .3s cubic-bezier(0.25, 0.1, 0, 0.93);
     z-index:100;
     height:100%;
@@ -34,8 +37,6 @@ function Item (props) {
         name:props.name,
         cal:0,
     })
-
-    const path= useLocation().pathname;
 
     const contextTheme = useContext(Theme);
     const isDark = contextTheme.isDark;
@@ -81,14 +82,14 @@ function Item (props) {
             <img className='banner' src={props.banner} alt='banner'/>
             <div className='info' onClick={()=>handleGrade()}>
                 <img className='profile-image' alt={props.name+' logo'} src={props.profile}  style={{borderColor : theme.backgroundCard}}/>
-                <h2>{props.name}</h2>
+                <h4>{props.name}</h4>
             </div>
             <div className='grade'>
                 <div className='item-grade' >
                     <Rating cal={props.cal}/>
                 </div>
             </div>
-            {path!=="/" && <Div
+            { <Div
             back={theme.backgroundCard}
             open={isUpdate}>
             <div className="close-add" onClick={()=>handleGrade()}>
@@ -101,13 +102,13 @@ function Item (props) {
             primary={theme.primary}
             secondary = {theme.secondary}
             ecolor = {theme.error}
-            label="Calificacion"
+            label="Calificacion del 1 al 10"
             type="number"
             max="10"
             min="1"
             value={data.cal}
-            onChange={val=>setData({...data, cal: parseInt(val)})}/>
-            <Button text="Añadir" click={()=>{uploadExperience()}}/>
+            onChange={val=>setData({...data, cal: parseInt(val)>10 ? 10 : parseInt(val)})}/>
+            <Button text="Calificar" click={()=>{uploadExperience()}}/>
         </Div>}
         </div>
     </>);
@@ -116,13 +117,14 @@ function Item (props) {
 
 
 function Schools () {
-    const [schools, setSchools] = useState([]);
+    const [schools, setSchools] = useState([])
     useEffect(()=>{
-        getSchools().then((data)=>{
+        getSchools().then(async (data)=>{
             setSchools(data);
+        }).catch((e)=>{
+            console.log(e);
         })
     },[]);
-    console.log(schools)
 
     const items = schools.map((data)=>
         <Item 
@@ -131,9 +133,16 @@ function Schools () {
             name={data.name}
             key={data.name}
             profile={data.profile}
-            grade={data.cal}     
             web={data.web}
             cal={data.cal}
+            /* banner={data.banner} 
+            location={data.location} 
+            name={data.name}
+            key={data.name}
+            profile={data.profile}
+            grade={data.cal}     
+            web={data.web}
+            cal={data.cal} */
         />
     );
     return(<>

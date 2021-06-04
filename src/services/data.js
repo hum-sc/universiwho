@@ -1,11 +1,8 @@
 import './config';
 import {dataBase} from './config'
-import {collection, addDoc, getDoc, doc, query, where, getDocs, setDoc, limit, orderBy, updateDoc} from 'firebase/firestore';
+import {collection, addDoc, doc, query, where, getDocs, setDoc, limit, orderBy, updateDoc} from 'firebase/firestore';
 var usersCollection = "users";
 var schoolsCollection = "schools";
-
-
-
 
 async function addDocument (myCollection, data){
     const docRef = await addDoc(collection(dataBase, myCollection), data)
@@ -16,7 +13,7 @@ async function addDocument (myCollection, data){
 }
 
 async function setDocument (myCollection, data, id){
-    const docRef = await setDoc(doc(dataBase,myCollection,id), data)
+    await setDoc(doc(dataBase,myCollection,id), data)
     .catch(async (e)=>{
         await Promise.reject(e);
     })
@@ -50,9 +47,10 @@ export async function searchSchool(school){
 export async function getSchools(){
     let schoolRes;
     let schools;
-    let q = query(collection(dataBase, schoolsCollection), orderBy("cal", "desc"), limit(25));
+    let q = query(collection(dataBase, schoolsCollection), orderBy("cal","desc"));
     let querySnapshot = await getDocs(q);
     schoolRes = querySnapshot.docs;
+    
     schools=schoolRes.map((doc)=>doc.data())
     return new Promise ((resolve, reject) =>{
         if(schoolRes.length > 0){
@@ -87,7 +85,7 @@ export async function setSchool(school){
         })
         .catch((e)=>{
            addDocument(schoolsCollection,school).then((doc)=>{
-                console.log(doc);
+               resolve(doc)
             })
             .catch((e)=>{
                 reject("error en el servidor, intenta mas tarde");
