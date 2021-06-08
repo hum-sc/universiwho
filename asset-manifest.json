@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.74705820.chunk.css",
-    "main.js": "/static/js/main.1c0637aa.chunk.js",
-    "main.js.map": "/static/js/main.1c0637aa.chunk.js.map",
+    "main.js": "/static/js/main.063805ed.chunk.js",
+    "main.js.map": "/static/js/main.063805ed.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2ea1e669.js",
     "runtime-main.js.map": "/static/js/runtime-main.2ea1e669.js.map",
     "static/js/2.c2ccb890.chunk.js": "/static/js/2.c2ccb890.chunk.js",
@@ -12,15 +12,15 @@
     "index.html": "/index.html",
     "static/css/main.74705820.chunk.css.map": "/static/css/main.74705820.chunk.css.map",
     "static/js/2.c2ccb890.chunk.js.LICENSE.txt": "/static/js/2.c2ccb890.chunk.js.LICENSE.txt",
-    "static/media/persona2.e9eae9dd.jpg": "/static/media/persona2.e9eae9dd.jpg",
-    "static/media/persona3.991abf12.jpg": "/static/media/persona3.991abf12.jpg",
-    "static/media/persona5.9024e229.jpg": "/static/media/persona5.9024e229.jpg",
-    "static/media/persona6.203196b6.jpg": "/static/media/persona6.203196b6.jpg"
+    "static/media/persona2.8732f53e.jpg": "/static/media/persona2.8732f53e.jpg",
+    "static/media/persona3.1c8012b3.jpg": "/static/media/persona3.1c8012b3.jpg",
+    "static/media/persona5.996e85f6.jpg": "/static/media/persona5.996e85f6.jpg",
+    "static/media/persona6.d7fbfb26.jpg": "/static/media/persona6.d7fbfb26.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2ea1e669.js",
     "static/js/2.c2ccb890.chunk.js",
     "static/css/main.74705820.chunk.css",
-    "static/js/main.1c0637aa.chunk.js"
+    "static/js/main.063805ed.chunk.js"
   ]
 }
