@@ -103,7 +103,9 @@ function Menu (){
         if(data.name !== "" && data.banner!=="" && data.cal !=null && data.profile!=="" && data.location !=="")
         {
             setError("")
-            setSchool(data).catch((e)=>{
+            setSchool(data).then((dat)=>{
+                window.open("./", "_self");
+            }).catch((e)=>{
                 setError(e);
             })
             
@@ -208,7 +210,7 @@ function Menu (){
             min="1" 
             max="10"
             value={data.cal}
-            onChange={val=>setData({...data, cal: parseInt(val)})}/>
+            onChange={val=>setData({...data, cal: parseInt(val)>10 ? 10 : parseInt(val)})}/>
             <Button text="Añadir" click={()=>{uploadSchool()}}/>
         </Div>
 

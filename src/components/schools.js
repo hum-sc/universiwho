@@ -9,6 +9,7 @@ import Location from './location'
 import Rating from './rating.jsx'
 
 import {Theme} from '../context/theme-context'
+import {User} from '../context/user-context'
 import { getSchools } from '../services/data';
 import Input from './input'
 import Button from './button';
@@ -39,6 +40,7 @@ function Item (props) {
     })
 
     const contextTheme = useContext(Theme);
+    const user = useContext(User);
     const isDark = contextTheme.isDark;
     var theme = null;
     theme = isDark ? contextTheme.dark : contextTheme.light;
@@ -62,6 +64,7 @@ function Item (props) {
             })
             .then((response)=>{
                 setUpdate(false);
+                window.open("./", "_self")
             })
             .catch((e)=>{
             })
@@ -76,11 +79,11 @@ function Item (props) {
             className='card'
             style={{backgroundColor : theme.backgroundCard}} 
         >
-            <div className='location'>
-                <Location location={props.location} color="white"/>
-            </div>
             <img className='banner' src={props.banner} alt='banner'/>
             <div className='info' onClick={()=>handleGrade()}>
+                <div className='location'>
+                    <Location location={props.location} color="white" secondary="white"/>
+                </div>
                 <img className='profile-image' alt={props.name+' logo'} src={props.profile}  style={{borderColor : theme.backgroundCard}}/>
                 <h4>{props.name}</h4>
             </div>
@@ -89,27 +92,27 @@ function Item (props) {
                     <Rating cal={props.cal}/>
                 </div>
             </div>
-            { <Div
-            back={theme.backgroundCard}
-            open={isUpdate}>
-            <div className="close-add" onClick={()=>handleGrade()}>
-                <Close/>
-            </div>
-            <a style={aStyle} href={props.web}>Sitio web</a>
-            <h5 style={{margin:0}}>Califica a {props.name}</h5>
-            <Input
-            background={theme.backgroundCard}
-            primary={theme.primary}
-            secondary = {theme.secondary}
-            ecolor = {theme.error}
-            label="Calificacion del 1 al 10"
-            type="number"
-            max="10"
-            min="1"
-            value={data.cal}
-            onChange={val=>setData({...data, cal: parseInt(val)>10 ? 10 : parseInt(val)})}/>
-            <Button text="Calificar" click={()=>{uploadExperience()}}/>
-        </Div>}
+            {user.isLoged && <Div
+                back={theme.backgroundCard}
+                open={isUpdate}>
+                <div className="close-add" onClick={()=>handleGrade()}>
+                    <Close/>
+                </div>
+                <a style={aStyle} href={props.web}>Sitio web</a>
+                <h5 style={{margin:0}}>Califica a {props.name} del 1 al 10</h5>
+                <Input
+                background={theme.backgroundCard}
+                primary={theme.primary}
+                secondary = {theme.secondary}
+                ecolor = {theme.error}
+                label="Calificacion"
+                type="number"
+                max="10"
+                min="1"
+                value={data.cal}
+                onChange={val=>setData({...data, cal: parseInt(val)>10 ? 10 : parseInt(val)})}/>
+                <Button text="Calificar" click={()=>{uploadExperience()}}/>
+            </Div>}
         </div>
     </>);
 }
