@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.74705820.chunk.css",
-    "main.js": "/static/js/main.123d5fe6.chunk.js",
-    "main.js.map": "/static/js/main.123d5fe6.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.3b1f68ec.js",
-    "runtime-main.js.map": "/static/js/runtime-main.3b1f68ec.js.map",
-    "static/js/2.84b606c4.chunk.js": "/static/js/2.84b606c4.chunk.js",
-    "static/js/2.84b606c4.chunk.js.map": "/static/js/2.84b606c4.chunk.js.map",
-    "static/js/3.b847b61a.chunk.js": "/static/js/3.b847b61a.chunk.js",
-    "static/js/3.b847b61a.chunk.js.map": "/static/js/3.b847b61a.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.74705820.chunk.css.map": "/static/css/main.74705820.chunk.css.map",
-    "static/js/2.84b606c4.chunk.js.LICENSE.txt": "/static/js/2.84b606c4.chunk.js.LICENSE.txt",
-    "static/media/persona2.8732f53e.jpg": "/static/media/persona2.8732f53e.jpg",
-    "static/media/persona3.1c8012b3.jpg": "/static/media/persona3.1c8012b3.jpg",
-    "static/media/persona5.996e85f6.jpg": "/static/media/persona5.996e85f6.jpg",
-    "static/media/persona6.d7fbfb26.jpg": "/static/media/persona6.d7fbfb26.jpg"
+    "main.css": "/hum-sc.github.io/universiwho/static/css/main.74705820.chunk.css",
+    "main.js": "/hum-sc.github.io/universiwho/static/js/main.2ec62397.chunk.js",
+    "main.js.map": "/hum-sc.github.io/universiwho/static/js/main.2ec62397.chunk.js.map",
+    "runtime-main.js": "/hum-sc.github.io/universiwho/static/js/runtime-main.b8c46546.js",
+    "runtime-main.js.map": "/hum-sc.github.io/universiwho/static/js/runtime-main.b8c46546.js.map",
+    "static/js/2.0b38388d.chunk.js": "/hum-sc.github.io/universiwho/static/js/2.0b38388d.chunk.js",
+    "static/js/2.0b38388d.chunk.js.map": "/hum-sc.github.io/universiwho/static/js/2.0b38388d.chunk.js.map",
+    "static/js/3.b847b61a.chunk.js": "/hum-sc.github.io/universiwho/static/js/3.b847b61a.chunk.js",
+    "static/js/3.b847b61a.chunk.js.map": "/hum-sc.github.io/universiwho/static/js/3.b847b61a.chunk.js.map",
+    "index.html": "/hum-sc.github.io/universiwho/index.html",
+    "static/css/main.74705820.chunk.css.map": "/hum-sc.github.io/universiwho/static/css/main.74705820.chunk.css.map",
+    "static/js/2.0b38388d.chunk.js.LICENSE.txt": "/hum-sc.github.io/universiwho/static/js/2.0b38388d.chunk.js.LICENSE.txt",
+    "static/media/persona2.8732f53e.jpg": "/hum-sc.github.io/universiwho/static/media/persona2.8732f53e.jpg",
+    "static/media/persona3.1c8012b3.jpg": "/hum-sc.github.io/universiwho/static/media/persona3.1c8012b3.jpg",
+    "static/media/persona5.996e85f6.jpg": "/hum-sc.github.io/universiwho/static/media/persona5.996e85f6.jpg",
+    "static/media/persona6.d7fbfb26.jpg": "/hum-sc.github.io/universiwho/static/media/persona6.d7fbfb26.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3b1f68ec.js",
-    "static/js/2.84b606c4.chunk.js",
+    "static/js/runtime-main.b8c46546.js",
+    "static/js/2.0b38388d.chunk.js",
     "static/css/main.74705820.chunk.css",
-    "static/js/main.123d5fe6.chunk.js"
+    "static/js/main.2ec62397.chunk.js"
   ]
 }
